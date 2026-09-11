@@ -6,6 +6,8 @@ namespace ExamenRuleta
 {
     internal class Ruleta
     {
+        //https://learn.microsoft.com/es-es/dotnet/api/system.random?view=net-10.0
+        //de ahi obtuve la funcion random al buscar como hacer que la ruleta sea aleatoria
         private Random random;
         public Ruleta()
         {
@@ -40,6 +42,12 @@ namespace ExamenRuleta
             }
             return "Impar";
         }
-        //agregar una manera de utilizar random que tambien guarde los datos para el historial
+        public Giro LETSGOGAMBLING()
+        {
+            int numero = random.Next(0, 37);
+            string color = ObtenerColor(numero);
+            string paridad = ParOImpar(numero);
+            return new Giro(numero, color, paridad);
+        }
     }
 }

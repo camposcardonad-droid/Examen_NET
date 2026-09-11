@@ -44,5 +44,9 @@ namespace ExamenRuleta
             decimal resultado = Cantidad * 2;
             return resultado;
         }
+        public override string ToString()
+        {
+            return $"Apuesta Actual: {Cantidad}$";
+        }
     }
 }
